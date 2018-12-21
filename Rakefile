@@ -3,4 +3,13 @@
 
 require_relative 'config/application'
 
+namespace :db do
+
+  desc 'Does it all'
+  task refresh: ['db:drop', 'db:create', 'db:migrate', 'db:seed'] do
+    puts 'dropping, creating, migrating, and seeding.'
+  end
+
+end
+
 Rails.application.load_tasks
