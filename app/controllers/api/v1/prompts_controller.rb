@@ -9,7 +9,7 @@ class Api::V1::PromptsController < ApplicationController
   end
 
   def create
-    render json: Prompt.create(cabinet_params)
+    render json: Prompt.create(prompt_params)
   end
 
   private
