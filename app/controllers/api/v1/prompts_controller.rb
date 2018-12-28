@@ -15,6 +15,6 @@ class Api::V1::PromptsController < ApplicationController
   private
 
   def prompt_params
-    params.require(:prompt).permit(:question)
+    params.require(:prompt).permit(:question, :category)
   end
 end

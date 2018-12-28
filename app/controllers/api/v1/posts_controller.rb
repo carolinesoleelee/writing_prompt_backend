@@ -23,6 +23,6 @@ class Api::V1::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:prompt).permit(:user_id, :prompt_id, :text)
+    params.require(:post).permit(:user_id, :prompt_id, :text)
   end
 end
