@@ -8,6 +8,13 @@ class Api::V1::UsersController < ApplicationController
     render json: User.find(params[:id])
   end
 
+  def profile
+    token = request.headers["Authentication"].split(" ")[1]
+    payload = decode(token)
+    user_id = payload["user_id"]
+    render json: { user: User.find(user_id) }, status: :accepted
+  end
+
   def create
     @user = User.create(user_params)
     if @user.valid?

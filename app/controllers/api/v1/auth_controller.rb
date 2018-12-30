@@ -5,7 +5,8 @@ def create # POST /api/v1/login
     render json: {
       message: "correct username and password",
       user_info: @user,
-      error: false
+      error: false,
+      token: encode({user_id: @user.id})
       }, status: :accepted
   else
     render json: {
